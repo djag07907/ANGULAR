@@ -44,7 +44,7 @@ export class LoginComponent implements OnInit {
 			this.router.navigate(['/']);
 			this.toastr.success('Un momento', "Iniciando sesión");
 		} else {
-			this.toastr.error('Failed', "Invalid Credentials");
+			this.toastr.error('Verifique', "Credenciales Invalidas");
 		}
 	}
 

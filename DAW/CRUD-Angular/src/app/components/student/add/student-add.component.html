@@ -20,7 +20,7 @@
 
 		<label class="w3-text-blue"><i class="w3-medium custom-icon fa fa-phone"></i><b>Teléfono</b></label>
 		<input class="w3-input w3-border" type="number" formControlName="phone">
-		<div class="w3-panel w3-red"  *ngIf="studentAddForm.controls.phone.invalid && (studentAddForm.controls.phone.dirty || studentAddForm.controls.phone.touched)">Favor introducir un número de teléfono válido</div> 
+		<div class="w3-panel w3-red"  *ngIf="studentAddForm.controls.phone.invalid && (studentAddForm.controls.phone.dirty || studentAddForm.controls.phone.touched)">Favor introducir un número de teléfono válido Ejemplo: 99999999</div> 
 		<br>
 		<button class="w3-btn w3-blue" type="submit" [disabled]="!studentAddForm.valid"><span *ngIf="index == undefined">Registrar</span><span *ngIf="index != undefined">Actualizar</span> <i class="w3-medium fa fa-check"></i> </button>
 

@@ -12,13 +12,13 @@
      if(localStorage.getItem('students') && localStorage.getItem('students') != '') {
        studentList = {
          code : 200,
-         message : "Students List Fetched Successfully",
+         message : "Lista obtenida",
          data : JSON.parse(localStorage.getItem('students'))
        }
      }else{
        studentList = {
          code : 200,
-         message : "Students List Fetched Successfully",
+         message : "Lista obtenida",
          data : JSON.parse(localStorage.getItem('students'))
        }
      }
@@ -47,7 +47,7 @@
        localStorage.setItem('students',JSON.stringify(studentList));
        returnData = {
          code : 200,
-         message : "Student Successfully Updated",
+         message : "Actualizado exitosamente",
          data : JSON.parse(localStorage.getItem('students'))
        }    
      }else{      
@@ -56,7 +56,7 @@
          if (studentList[i].email == data.email) {
            returnData = {
              code : 503,
-             message : "Email Address Already In Use",
+             message : "Correo en uso, favor verifique",
              data : null
            }    
            return returnData;
@@ -68,7 +68,7 @@
 
        returnData = {
          code : 200,
-         message : "Student Successfully Added",
+         message : "Estudiante agregado exitosamente",
          data : JSON.parse(localStorage.getItem('students'))
        }    
      }
@@ -84,7 +84,7 @@
 
      let returnData = {
        code : 200,
-       message : "Student Successfully Deleted",
+       message : "Estudiante eliminado exitosamente",
        data : JSON.parse(localStorage.getItem('students'))
      }
 

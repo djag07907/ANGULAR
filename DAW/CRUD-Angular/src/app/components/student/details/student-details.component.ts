@@ -43,7 +43,7 @@ export class StudentDetailsComponent implements OnInit {
 		const getStudentDetail = this.studentService.getStudentDetails(index);
 		if (getStudentDetail) {
 			this.studentDetail = getStudentDetail.studentData;
-			this.toastr.success(getStudentDetail.message, 'Success');
+			this.toastr.success(getStudentDetail.message, 'Excelente');
 		}
 	}
 

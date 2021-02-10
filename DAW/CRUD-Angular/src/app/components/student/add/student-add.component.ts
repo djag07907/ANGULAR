@@ -50,10 +50,10 @@ export class StudentAddComponent implements OnInit {
 		let studentRegister = this.studentService.doRegisterStudent(this.studentAddForm.value, this.index);
 		if (studentRegister) {
 			if (studentRegister.code == 200) {
-				this.toastr.success(studentRegister.message, 'Success');
+				this.toastr.success(studentRegister.message, 'Excelente');
 				this.router.navigate(['/']);
 			} else {
-				this.toastr.error(studentRegister.message, "Failed");
+				this.toastr.error(studentRegister.message, "Que mal...");
 			}
 		}
 	}
@@ -70,14 +70,14 @@ export class StudentAddComponent implements OnInit {
 			this.studentAddForm = this.formBuilder.group({
 				first_name: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(50)]],
 				last_name: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(50)]],
-				phone: ['', [Validators.required, ValidationService.checkLimit(5000000000, 99999999)]],
+				phone: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(8)]],
 				email: ['', [Validators.required, ValidationService.emailValidator]]
 			});
 		} else {
 			this.studentAddForm = this.formBuilder.group({
 				first_name: [data.studentData.first_name, [Validators.required, Validators.minLength(3), Validators.maxLength(50)]],
 				last_name: [data.studentData.last_name, [Validators.required, Validators.minLength(3), Validators.maxLength(50)]],
-				phone: [data.studentData.phone, [Validators.required, ValidationService.checkLimit(22222222, 99999999)]],
+				phone: [data.studentData.phone, [Validators.required, Validators.minLength(8), Validators.maxLength(8)]],
 				email: [data.studentData.email, [Validators.required, ValidationService.emailValidator]]
 			});
 		}
